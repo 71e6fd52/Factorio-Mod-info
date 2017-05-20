@@ -1,2 +1,2 @@
 ## factorio-mod-info
-[ ] README
+- [ ] README
