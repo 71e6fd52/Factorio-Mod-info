@@ -1,7 +1,15 @@
+sudo: required
 addons:
   apt:
     sources:
     - sourceline: 'deb http://ppa.launchpad.net/tboox/xmake/ubuntu yakkety main'
     packages:
     - xmake
+    - libboost-all-dev
+before_install:
+  - wget https://github.com/avplayer/avhttp/archive/v2.9.9.tar.gz
+  - tar xvzf v2.9.9.tar.gz
+  - cd avhttp-2.9.9
+  - mkdir build && cd build
+  - cmake .. && sudo make install
 script: xmake
