@@ -41,10 +41,10 @@ public:
 
 #define aaa(x)\
 	std::string x() throw (DA::exception);\
-	std::string x(int id) throw (DA::exception);
+	std::string x(int id) throw (DA::exception);\
+	std::string x(std::string factorio_version) throw (DA::exception);
 	
 	aaa(download_url);
-	std::string download_url(std::string factorio_version) ;//throw (DA::exception);
 	aaa(version);
 	aaa(factorio_version);
 #undef aaa
