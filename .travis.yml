@@ -1,7 +1,7 @@
 addons:
   apt:
     sources:
-    - sourceline: 'ppa:tboox/xmake'
+    - sourceline: 'deb http://ppa.launchpad.net/tboox/xmake/ubuntu yakkety main'
     packages:
     - xmake
 script: xmake
