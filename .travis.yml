@@ -3,7 +3,7 @@ addons:
   apt:
     sources:
     - sourceline: 'deb http://ppa.launchpad.net/tboox/xmake/ubuntu yakkety main'
-    - sourceline: 'ppa:riccardo-kde/boost-ppa'
+    - sourceline: 'ppa:boost-latest/ppa'
     packages:
     - xmake
     - boost1.49
