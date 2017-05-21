@@ -1,0 +1,7 @@
+addons:
+  apt:
+    sources:
+    - sourceline: 'ppa:tboox/xmake'
+    packages:
+    - xmake
+script: xmake
