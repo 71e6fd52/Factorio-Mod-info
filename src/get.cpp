@@ -30,44 +30,44 @@ namespace mod
 	aaa(description);
 	aaa(license_name);
 	aaa(license_url);
-	//aaa(updated_at);
-	std::string info::updated_at()
-	{
-		return pt.get<std::string>("updated_at");
-	}
+	aaa(updated_at);
 #undef aaa
 
-	std::unordered_set<int> id_list();
-	std::string info::download_url() throw(DA::exception)
-	{
-		return "https://mods.factorio.com" + get_releases().get<std::string>("download_url");
-	}
-	std::string info::download_url(int id) throw(DA::exception)
-	try
-	{
-		return "https://mods.factorio.com" + get_releases(id).get<std::string>("download_url");
-	}
+#define aaa(x, y)\
+	std::string info::download_url(x y) throw(DA::exception)\
+	try\
+	{\
+		return "https://mods.factorio.com" + get_releases(y).get<std::string>("download_url");\
+	}\
 	DA_CATCH_EXCEPTION
+	
+	aaa(,);
+	aaa(int, id);
+	aaa(std::string, factorio_version);
+#undef aaa
 
-	std::string info::download_url(std::string factorio_version) //throw(DA::exception)
-	{
-		return "https://mods.factorio.com" + get_releases(factorio_version).get<std::string>("download_url");
-	}
 #define aaa(x)\
-	std::string info::x() throw(DA::exception)\
+	std::string info::x() throw (DA::exception)\
 	try\
 	{\
 		return get_releases().get<std::string>(#x);\
 	}\
 	DA_CATCH_EXCEPTION\
-	std::string info::x(int id) throw(DA::exception)\
+	std::string info::x(int id) throw (DA::exception)\
 	try\
 	{\
 		return get_releases(id).get<std::string>(#x);\
+	}\
+	DA_CATCH_EXCEPTION\
+	std::string info::x(std::string factorio_version) throw (DA::exception)\
+	try\
+	{\
+		return get_releases(factorio_version).get<std::string>(#x);\
 	}\
 	DA_CATCH_EXCEPTION
 	
 	aaa(version);
 	aaa(factorio_version);
+#undef aaa
 } /* mod */ 
 } /* factorio */ 
