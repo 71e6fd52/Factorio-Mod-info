@@ -1,4 +1,5 @@
 # Factorio-Mod-info
+[![codecov](https://codecov.io/gh/745275633/Factorio-Mod-info/branch/master/graph/badge.svg)](https://codecov.io/gh/745275633/Factorio-Mod-info)
 ## 简介
 Factorio-Mod-info 是一个可以获取 Factorio Mod 信息的库。
 ## 安装
