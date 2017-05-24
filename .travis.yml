@@ -5,6 +5,7 @@ addons:
     sources:
     - sourceline: 'deb http://ppa.launchpad.net/tboox/xmake/ubuntu yakkety main'
     - sourceline: 'ppa:boost-latest/ppa'
+    - ubuntu-toolchain-r-test
     packages:
     - xmake
     - boost1.55
