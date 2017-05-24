@@ -1,5 +1,4 @@
 sudo: required
-env: COMPILER_NAME=gcc CXX=g++-5 CC=gcc-5
 addons:
   apt:
     sources:
@@ -15,4 +14,6 @@ before_install:
   - tar xvzf v2.9.9.tar.gz
   - cd avhttp-2.9.9
   - sudo cp -r include/* /usr/include
-script: xmake
+script:
+  - xmake config --cc=gcc-5 --cxx=g++-5
+  - xmake
