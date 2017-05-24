@@ -41,7 +41,7 @@ target("factorio-mod-info")
 			os.exit(1);
 		end
 		if not os.exists("/usr/include/DA/exception.hpp") then
-			os.run("sh", "-c", "cd $(scriptdir)/DA-exception && sudo ./install")
+			os.exec("sh -c \'cd $(scriptdir)/DA-exception && sudo ./install\'")
 		end
 	end)
 
