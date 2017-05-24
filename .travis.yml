@@ -7,6 +7,7 @@ addons:
     packages:
     - xmake
     - boost1.55
+    - g++
 before_install:
   - wget https://github.com/avplayer/avhttp/archive/v2.9.9.tar.gz
   - tar xvzf v2.9.9.tar.gz
