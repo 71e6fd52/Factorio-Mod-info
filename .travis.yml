@@ -1,4 +1,5 @@
 sudo: required
+env: COMPILER_NAME=gcc CXX=g++-5 CC=gcc-5
 addons:
   apt:
     sources:
@@ -7,6 +8,7 @@ addons:
     packages:
     - xmake
     - boost1.55
+    - g++-5
 before_install:
   - wget https://github.com/avplayer/avhttp/archive/v2.9.9.tar.gz
   - tar xvzf v2.9.9.tar.gz
