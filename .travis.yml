@@ -15,5 +15,5 @@ before_install:
   - cd avhttp-2.9.9
   - sudo cp -r include/* /usr/include
 script:
-  - xmake config --cc=gcc-6 --cxx=g++-6 --sh=sh
+  - xmake config --cc=gcc-6 --cxx=g++-6
   - xmake
