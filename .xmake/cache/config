@@ -1,4 +1,20 @@
 
 {
-    ["__version"] = "2.1.4"
+    ["rebuild"] = true
+,   ["options_all"] = 
+    {
+        ["clean"] = true
+    }
+
+,   ["mtimes"] = 
+    {
+        ["xmake.lua"] = 1495714969
+    }
+
+,   ["__version"] = "2.1.4"
+,   ["options_factorio-mod-info"] = 
+    {
+        ["clean"] = true
+    }
+
 }

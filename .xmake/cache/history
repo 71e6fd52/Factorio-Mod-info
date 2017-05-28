@@ -4,6 +4,11 @@
 ,   ["cmdlines"] = 
     {
         "xmake"
+    ,   "xmake config -c"
+    ,   "xmake config"
+    ,   "xmake config --cc=gcc"
+    ,   "xmake config --cc=gcc-6 --cxx=g++-6"
+    ,   "xmake config -c"
     }
 
 }
