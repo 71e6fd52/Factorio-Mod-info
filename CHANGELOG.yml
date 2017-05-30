@@ -1,0 +1,21 @@
+0.1.0:
+    add:
+        - info() 
+        - info(std::string name) 
+        - void read_name(std::string name) 
+        - void read_full_name(std::string name) 
+        - void read_url(std::string url) 
+        - int id() 
+        - std::string name() 
+        - std::string title() 
+        - std::string homepage() 
+        - std::string github_path() 
+        - std::string summary() 
+        - std::string description() 
+        - std::string owner() 
+        - std::string license_name() 
+        - std::string license_url() 
+        - std::unordered_set<int> id_list() 
+        - download_url 
+        - version 
+        - factorio_version 
