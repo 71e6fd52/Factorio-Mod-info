@@ -1,11 +1,12 @@
 master(0.1.1):
-    change:
+    Change:
         - function const
-    fix:
+    Fix:
         - undefined reference by set_symbols
         - dynamic exception specifications
+        - some try catch
 0.1.0:
-    add:
+    Feature:
         - info() 
         - info(std::string name) 
         - void read_name(std::string name) 

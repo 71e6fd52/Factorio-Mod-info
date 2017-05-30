@@ -16,6 +16,7 @@ namespace factorio
 namespace mod
 {
 	std::string info::get_script(std::string html) const
+	try
 	{
 		ptree pt;
 		std::stringstream ss(html);
@@ -25,7 +26,9 @@ namespace mod
 		json = json.substr(0, json.rfind('}') + 1);
 		return json;
 	}
+	DA_CATCH_EXCEPTION
 	avhttp::url info::get_url(std::string name) const
+	try
 	{
 		using namespace std;
 		stringstream ss;
@@ -67,6 +70,7 @@ namespace mod
 		}
 		DA_THROW_EXCEPTION_1("Can't found mod");
 	}
+	DA_CATCH_EXCEPTION
 	ptree info::get_json(avhttp::url url) const
 	try
 	{
@@ -91,20 +95,28 @@ namespace mod
 	}
 	DA_CATCH_EXCEPTION
 	info::info(std::string name)
+	try
 	{
 		pt = get_json(get_url(name)).get_child("mod.mod");
 	}
+	DA_CATCH_EXCEPTION
 	void info::read_name(std::string name)
+	try
 	{
 		pt = get_json(get_url(name)).get_child("mod.mod");
 	}
+	DA_CATCH_EXCEPTION
 	void info::read_full_name(std::string name)
+	try
 	{
 		pt = get_json("https://mods.factorio.com/mods/" + name).get_child("mod.mod");
 	}
+	DA_CATCH_EXCEPTION
 	void info::read_url(std::string url)
+	try
 	{
 		pt = get_json(url).get_child("mod.mod");
 	}
+	DA_CATCH_EXCEPTION
 } /* mod */ 
 } /* factorio */ 
