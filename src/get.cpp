@@ -34,7 +34,7 @@ namespace mod
 #undef aaa
 
 #define aaa(x, y)\
-	std::string info::download_url(x y) const throw(DA::exception)\
+	std::string info::download_url(x y) const\
 	try\
 	{\
 		return "https://mods.factorio.com" + get_releases(y).get<std::string>("download_url");\
@@ -47,7 +47,7 @@ namespace mod
 #undef aaa
 
 #define bbb(name, x, y)\
-	std::string info::name(x y) const throw(DA::exception)\
+	std::string info::name(x y) const\
 	try\
 	{\
 		return get_releases(y).get<std::string>(#name);\

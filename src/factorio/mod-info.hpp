@@ -40,9 +40,9 @@ public:
 	std::unordered_set<int> id_list() const;
 
 #define aaa(x)\
-	std::string x() const throw (DA::exception);\
-	std::string x(int id) const throw (DA::exception);\
-	std::string x(std::string factorio_version) const throw (DA::exception);
+	std::string x() const;\
+	std::string x(int id) const;\
+	std::string x(std::string factorio_version) const;
 	
 	aaa(download_url);
 	aaa(version);

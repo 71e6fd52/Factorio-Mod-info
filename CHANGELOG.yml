@@ -1,7 +1,9 @@
 master(0.1.1):
+    change:
+        - function const
     fix:
         - undefined reference by set_symbols
-        - function const
+        - dynamic exception specifications
 0.1.0:
     add:
         - info() 
