@@ -20,7 +20,7 @@ end
 target("factorio-mod-info")
 	set_kind("shared")
 	add_files("src/*.cpp") 
-	add_headers("src/**.hpp")
+	add_headers("src/(factorio/*.hpp)")
 	add_links("ssl", "pthread", "boost_date_time", "boost_system", "boost_filesystem")
 	before_build(function (target)
 		if not os.exists("/usr/include/boost") then
