@@ -17,6 +17,7 @@ xmake install
 ## 例子
 获取 Pushbutton 最新版的下载地址。
 ```c++
+#define AVHTTP_DISABLE_THREAD
 #include <mod-info.hpp>
 #include <iostream>
 
@@ -30,6 +31,7 @@ DA_MAIN_CATCH_EXCEPTION
 ```
 或者分离开来
 ```c++
+#define AVHTTP_DISABLE_THREAD
 #include <mod-info.hpp>
 #include <iostream>
 
@@ -44,6 +46,7 @@ DA_MAIN_CATCH_EXCEPTION
 ```
 还可以指定 Factorio 版本：
 ```c++
+#define AVHTTP_DISABLE_THREAD
 #include <mod-info.hpp>
 #include <iostream>
 
@@ -88,4 +91,8 @@ DA_MAIN_CATCH_EXCEPTION
 | download_url | 下载地址 |
 | version | Mod 版本 |
 | factorio_version | 支持的 Factorio 版本 |
+## 宏选项
+| 宏 | 简介 |
+| -- | ---- |
+| AVHTTP_DISABLE_THREAD | 在单线程环境中避免使用锁，以提高工作效率（来自：avhttp） |
 
