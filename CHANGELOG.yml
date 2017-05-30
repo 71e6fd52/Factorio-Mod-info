@@ -1,6 +1,7 @@
 master(0.1.1):
     Change:
         - function const
+        - get_script no longer use xml
     Fix:
         - undefined reference by set_symbols
         - dynamic exception specifications

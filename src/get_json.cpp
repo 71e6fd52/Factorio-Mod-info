@@ -1,6 +1,6 @@
 #include <boost/property_tree/ptree.hpp>
-#include <boost/property_tree/xml_parser.hpp>
 #include <boost/property_tree/json_parser.hpp>
+#include <boost/regex.hpp>
 #include "factorio/mod-info.hpp"
 #include <DA/exception.hpp>
 #include <sstream>
@@ -20,8 +20,10 @@ namespace mod
 	{
 		ptree pt;
 		std::stringstream ss(html);
-		read_xml(ss, pt);
-		std::string json = pt.get<std::string>("html.body.script");
+		std::string json;
+		while(std::getline(ss, json))
+			if(json.find("window.__INITIAL_STATE__") != std::string::npos)
+				break;
 		json = json.substr(json.find('{'));
 		json = json.substr(0, json.rfind('}') + 1);
 		return json;
