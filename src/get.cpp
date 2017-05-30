@@ -12,12 +12,12 @@ namespace factorio
 {
 namespace mod
 {
-	int info::id()
+	int info::id() const
 	{
 		return pt.get<int>("id");
 	}
 #define aaa(x)\
-	std::string info::x() \
+	std::string info::x() const \
 	{\
 		return pt.get<std::string>(#x);\
 	}
@@ -34,7 +34,7 @@ namespace mod
 #undef aaa
 
 #define aaa(x, y)\
-	std::string info::download_url(x y) throw(DA::exception)\
+	std::string info::download_url(x y) const throw(DA::exception)\
 	try\
 	{\
 		return "https://mods.factorio.com" + get_releases(y).get<std::string>("download_url");\
@@ -46,25 +46,17 @@ namespace mod
 	aaa(std::string, factorio_version);
 #undef aaa
 
-#define aaa(x)\
-	std::string info::x() throw (DA::exception)\
+#define bbb(name, x, y)\
+	std::string info::name(x y) const throw(DA::exception)\
 	try\
 	{\
-		return get_releases().get<std::string>(#x);\
-	}\
-	DA_CATCH_EXCEPTION\
-	std::string info::x(int id) throw (DA::exception)\
-	try\
-	{\
-		return get_releases(id).get<std::string>(#x);\
-	}\
-	DA_CATCH_EXCEPTION\
-	std::string info::x(std::string factorio_version) throw (DA::exception)\
-	try\
-	{\
-		return get_releases(factorio_version).get<std::string>(#x);\
+		return get_releases(y).get<std::string>(#name);\
 	}\
 	DA_CATCH_EXCEPTION
+#define aaa(x)\
+	bbb(x,,)\
+	bbb(x,int, id)\
+	bbb(x,std::string, factorio_version)\
 	
 	aaa(version);
 	aaa(factorio_version);

@@ -15,7 +15,7 @@ namespace factorio
 {
 namespace mod
 {
-	std::string info::get_script(std::string html)
+	std::string info::get_script(std::string html) const
 	{
 		ptree pt;
 		std::stringstream ss(html);
@@ -25,7 +25,7 @@ namespace mod
 		json = json.substr(0, json.rfind('}') + 1);
 		return json;
 	}
-	avhttp::url info::get_url(std::string name)
+	avhttp::url info::get_url(std::string name) const
 	{
 		using namespace std;
 		stringstream ss;
@@ -67,7 +67,7 @@ namespace mod
 		}
 		DA_THROW_EXCEPTION_1("Can't found mod");
 	}
-	ptree info::get_json(avhttp::url url)
+	ptree info::get_json(avhttp::url url) const
 	try
 	{
 		using namespace std;

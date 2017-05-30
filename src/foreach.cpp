@@ -19,7 +19,7 @@ namespace factorio
 {
 namespace mod
 { 
-	boost::property_tree::ptree info::get_releases()
+	boost::property_tree::ptree info::get_releases() const
 	{
 		auto releases = pt.get_child("releases");
 		std::regex reg(R"((2\d{3}(-\d{2}){2})T((\d{2}:){2}\d{2}.\d+)Z)");
@@ -48,7 +48,7 @@ namespace mod
 		}
 		DA_THROW_EXCEPTION_1("can't found releases");
 	}
-	boost::property_tree::ptree info::get_releases(int id)
+	boost::property_tree::ptree info::get_releases(int id) const
 	{
 		auto releases = pt.get_child("releases");
 		for (const auto & i : releases)
@@ -59,7 +59,7 @@ namespace mod
 		DA_THROW_EXCEPTION_1("can't found releases");
 	}
 	
-	boost::property_tree::ptree info::get_releases(std::string factorio_version)
+	boost::property_tree::ptree info::get_releases(std::string factorio_version) const
 	{
 		auto releases = pt.get_child("releases");
 		std::regex reg(R"((2\d{3}(-\d{2}){2})T((\d{2}:){2}\d{2}.\d+)Z)");
@@ -98,7 +98,7 @@ namespace mod
 		return get_releases(latest);
 		DA_THROW_EXCEPTION_1("can't found releases");
 	}
-	std::unordered_set<int> info::id_list()
+	std::unordered_set<int> info::id_list() const
 	{
 		auto releases = pt.get_child("releases");
 		std::unordered_set<int> list;

@@ -11,12 +11,12 @@ class info final
 private:
 	boost::property_tree::ptree pt;
 
-	std::string get_script(std::string html);
-	avhttp::url get_url(std::string name);
-	boost::property_tree::ptree get_json(avhttp::url url);
-	boost::property_tree::ptree get_releases();
-	boost::property_tree::ptree get_releases(int id);
-	boost::property_tree::ptree get_releases(std::string factorio_version);
+	std::string get_script(std::string html) const;
+	avhttp::url get_url(std::string name) const;
+	boost::property_tree::ptree get_json(avhttp::url url) const;
+	boost::property_tree::ptree get_releases() const;
+	boost::property_tree::ptree get_releases(int id) const;
+	boost::property_tree::ptree get_releases(std::string factorio_version) const;
 
 public:
 	info() = default;
@@ -25,24 +25,24 @@ public:
 	void read_full_name(std::string name);
 	void read_url(std::string url);
 
-	int id();
-	std::string name();
-	std::string title();
-	std::string homepage();
-	std::string github_path();
-	std::string summary();
-	std::string owner();
-	std::string description();
-	std::string license_name();
-	std::string license_url();
-	std::string updated_at();
+	int id() const;
+	std::string name() const;
+	std::string title() const;
+	std::string homepage() const;
+	std::string github_path() const;
+	std::string summary() const;
+	std::string owner() const;
+	std::string description() const;
+	std::string license_name() const;
+	std::string license_url() const;
+	std::string updated_at() const;
 
-	std::unordered_set<int> id_list();
+	std::unordered_set<int> id_list() const;
 
 #define aaa(x)\
-	std::string x() throw (DA::exception);\
-	std::string x(int id) throw (DA::exception);\
-	std::string x(std::string factorio_version) throw (DA::exception);
+	std::string x() const throw (DA::exception);\
+	std::string x(int id) const throw (DA::exception);\
+	std::string x(std::string factorio_version) const throw (DA::exception);
 	
 	aaa(download_url);
 	aaa(version);

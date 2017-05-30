@@ -1,6 +1,7 @@
 master(0.1.1):
     fix:
         - undefined reference by set_symbols
+        - function const
 0.1.0:
     add:
         - info() 
