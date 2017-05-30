@@ -2,14 +2,17 @@
 ## 简介
 Factorio-Mod-info 是一个可以获取 Factorio Mod 信息的库。
 ## 安装
+### Window
+运行 `install.exe` 将自动进行安装，**注意：请自行备份重要文件**
 ### Arch Linux
-在 Arch Linux 的 aur 中有 [Factorio-Mod-info-git](https://aur.archlinux.org/packages/Factorio-Mod-info-git/)
+- [ ] 在 Arch Linux 的 aur 中有 [Factorio-Mod-info-git](https://aur.archlinux.org/packages/Factorio-Mod-info-git/) （正在打包）
+
 ### 其他 Linux
 安装你需要 [xmake](https://github.com/tboox/xmake)，[Boost](http://www.boost.org/) 和 [avhttp](https://avplayer.org/avhttp.html)，因为 [mods.factorio.com](https://mods.factorio.com) 需要 https，所以还需要 openssl。
 
 安装完依赖后只需要
 ```bash
-xmake i
+xmake install
 ```
 ## 例子
 获取 Pushbutton 最新版的下载地址。
