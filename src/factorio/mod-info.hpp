@@ -11,8 +11,6 @@ class info final
 private:
 	boost::property_tree::ptree pt;
 
-	std::string get_script(std::string html) const;
-	avhttp::url get_url(std::string name) const;
 	boost::property_tree::ptree get_json(avhttp::url url) const;
 	boost::property_tree::ptree get_releases() const;
 	boost::property_tree::ptree get_releases(int id) const;
@@ -22,6 +20,7 @@ public:
 	info() = default;
 	info(std::string name);
 	void read_name(std::string name);
+	void read_name_fast(std::string name);
 	void read_full_name(std::string name);
 	void read_url(std::string url);
 
