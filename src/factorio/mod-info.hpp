@@ -18,6 +18,8 @@ private:
 
 public:
 	info() = default;
+	info(info const &) = default;
+
 	info(std::string name);
 	info read_name(std::string name);
 	info read_name_fast(std::string name);
