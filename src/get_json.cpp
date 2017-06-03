@@ -37,7 +37,7 @@ namespace mod
 		{
 			std::string url = "https://mods.factorio.com/?q=";
 			url += name;
-			url = avhttp::detail::escape_string(url);
+			url = avhttp::detail::escape_string(string(url));
 	
 			boost::asio::io_service io;
 			avhttp::http_stream h(io);
