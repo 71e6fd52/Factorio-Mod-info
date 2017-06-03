@@ -19,10 +19,10 @@ private:
 public:
 	info() = default;
 	info(std::string name);
-	void read_name(std::string name);
-	void read_name_fast(std::string name);
-	void read_full_name(std::string name);
-	void read_url(std::string url);
+	info read_name(std::string name);
+	info read_name_fast(std::string name);
+	info read_full_name(std::string name);
+	info read_url(std::string url);
 
 	int id() const;
 	std::string name() const;
