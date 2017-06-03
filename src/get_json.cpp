@@ -66,6 +66,7 @@ namespace mod
 					#ifdef DEBUG
 						AVHTTP_LOG_DBG << "mod url:" << result;
 					#endif
+					result = avhttp::detail::escape_path(result);
 					return result;
 				}
 			}
