@@ -10,6 +10,7 @@
 	#include <iostream>
 #endif
 using namespace	boost::property_tree;
+using avhttp::detail::escape_string;
 
 namespace factorio
 {
@@ -36,7 +37,7 @@ namespace mod
 		stringstream ss;
 		{
 			std::string url = "https://mods.factorio.com/?q=";
-			url += avhttp::detail::escape_string(name);
+			url += escape_string(name);
 	
 			boost::asio::io_service io;
 			avhttp::http_stream h(io);
@@ -60,13 +61,12 @@ namespace mod
 				if(j.second.get<string>("name") == name)
 				{
 					string result = "https://mods.factorio.com/mods/";
-					result += j.second.get<string>("owner");
+					result += escape_string(j.second.get<string>("owner"));
 					result += "/";
-					result += name;
+					result += escape_string(name);
 					#ifdef DEBUG
 						AVHTTP_LOG_DBG << "mod url:" << result;
 					#endif
-					result = avhttp::detail::escape_path(result);
 					return result;
 				}
 			}
