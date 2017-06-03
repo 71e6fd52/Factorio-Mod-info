@@ -114,7 +114,7 @@ namespace mod
 	void info::read_name(std::string name)
 	try
 	{
-		pt = get_json(get_url(name)).get_child("mod.mod");
+		pt = search(name);
 	}
 	DA_CATCH_EXCEPTION
 	void info::read_name_fast(std::string name)
