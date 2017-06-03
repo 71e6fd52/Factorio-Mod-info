@@ -1,7 +1,11 @@
 master(0.1.1):
+    Feature:
+        - factorio::mod::info read_name_fast(std::string name)
+        - info(info)
     Change:
         - function const
         - get_script no longer use xml
+        - read-* return factorio::mod::info
     Fix:
         - undefined reference by set_symbols
         - dynamic exception specifications
