@@ -6,6 +6,7 @@ master(0.1.1):
         - undefined reference by set_symbols
         - dynamic exception specifications
         - some try catch
+        - mod name can't have space
 0.1.0:
     Feature:
         - info() 
