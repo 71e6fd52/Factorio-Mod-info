@@ -114,14 +114,14 @@ namespace mod
 	info info::read_name(std::string name)
 	try
 	{
-		pt = search(name);
+		pt = get_json(get_url(name)).get_child("mod.mod");
 		return *this;
 	}
 	DA_CATCH_EXCEPTION
 	info info::read_name_fast(std::string name)
 	try
 	{
-		pt = get_json(get_url(name)).get_child("mod.mod");
+		pt = search(name);
 		return *this;
 	}
 	DA_CATCH_EXCEPTION
