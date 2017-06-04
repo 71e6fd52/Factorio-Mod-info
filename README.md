@@ -60,8 +60,9 @@ try
 }
 DA_MAIN_CATCH_EXCEPTION
 ```
-## class factorio::mod::info 接口
-### 载入
+## class factorio::mod::info
+### 接口
+#### 载入
 | 函数 | 简介 |
 | ---- | ---- |
 | info() | 默认构造函数 |
@@ -70,7 +71,7 @@ DA_MAIN_CATCH_EXCEPTION
 | info read_name_fast(std::string name) | 以 Mod 名读取部分信息（没有发布相关的信息），速度更快 |
 | info read_full_name(std::string name) | 以 Mod 完整名（"作者名/Mod 名"）读取（如：orzelek/rso-mod） |
 | info read_url(std::string url) | 从 URL 读取 Mod 信息（不一定为 mods.factorio.com，只要 json 数据与 window.\_\_INITIAL\_STATE\_\_ 在同一行） |
-### 读取信息
+#### 读取信息
 | 函数 | 读取内容 |
 | ---- | -------- |
 | int id() | id（如 rso-mod 为 87644） |
@@ -84,7 +85,7 @@ DA_MAIN_CATCH_EXCEPTION
 | std::string license_name() | 许可证名 |
 | std::string license_url() | 许可证地址 |
 | std::unordered_set&lt;int> id_list() | 所有发布 的 ID |
-### 发布相关
+#### 发布相关
 这些函数都有三个版本，`type fun()`,`type fun(int id)`,`type fun(std::string factorio_version)`。
 
 分别读取最新的发布、指定 ID 的发布、指定 Factorio 版本的发布。
@@ -94,7 +95,13 @@ DA_MAIN_CATCH_EXCEPTION
 | download_url | 下载地址 |
 | version | Mod 版本 |
 | factorio_version | 支持的 Factorio 版本 |
-## 宏选项
+#### 重载运算符
+| 函数 |
+| ---- |
+| bool operator == (info lhs, info rhs) |
+| YAML::Emitter& operator << (YAML::Emitter& out, const factorio::mod::info & mod) |
+
+### 宏选项
 | 宏 | 简介 |
 | -- | ---- |
 | AVHTTP_DISABLE_THREAD | 在单线程环境中避免使用锁，以提高工作效率（来自：avhttp） |
