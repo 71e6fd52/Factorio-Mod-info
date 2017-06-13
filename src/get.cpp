@@ -61,5 +61,15 @@ namespace mod
 	aaa(version);
 	aaa(factorio_version);
 #undef aaa
+
+	avhttp::url info::mod_page() const
+	{
+		using avhttp::detail::escape_string;
+		std::string result = "https://mods.factorio.com/mods/";
+		result += escape_string(owner());
+		result += "/";
+		result += escape_string(name());
+		return result;
+	}
 } /* mod */ 
 } /* factorio */ 

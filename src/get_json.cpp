@@ -67,20 +67,6 @@ namespace mod
 		DA_THROW_EXCEPTION_1("Can't found mod");
 	}
 	DA_CATCH_EXCEPTION
-	avhttp::url get_url(std::string name) 
-	try
-	{
-		auto pt = search(name);
-		std::string result = "https://mods.factorio.com/mods/";
-		result += escape_string(pt.get<std::string>("owner"));
-		result += "/";
-		result += escape_string(name);
-		#ifdef DEBUG
-			AVHTTP_LOG_DBG << "mod url:" << result;
-		#endif
-		return result;
-	}
-	DA_CATCH_EXCEPTION
 	
 	ptree info::get_json(avhttp::url url) const
 	try
@@ -108,13 +94,14 @@ namespace mod
 	info::info(std::string name)
 	try
 	{
-		pt = get_json(get_url(name)).get_child("mod.mod");
+		read_name(name);
 	}
 	DA_CATCH_EXCEPTION
 	info info::read_name(std::string name)
 	try
 	{
-		pt = get_json(get_url(name)).get_child("mod.mod");
+		read_name_fast(name);
+		read_url(mod_page());
 		return *this;
 	}
 	DA_CATCH_EXCEPTION
@@ -132,7 +119,7 @@ namespace mod
 		return *this;
 	}
 	DA_CATCH_EXCEPTION
-	info info::read_url(std::string url)
+	info info::read_url(avhttp::url url)
 	try
 	{
 		pt = get_json(url).get_child("mod.mod");

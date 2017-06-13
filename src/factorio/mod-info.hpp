@@ -24,7 +24,7 @@ public:
 	info read_name(std::string name);
 	info read_name_fast(std::string name);
 	info read_full_name(std::string name);
-	info read_url(std::string url);
+	info read_url(avhttp::url url);
 
 	int id() const;
 	std::string name() const;
@@ -37,6 +37,8 @@ public:
 	std::string license_name() const;
 	std::string license_url() const;
 	std::string updated_at() const;
+
+	avhttp::url mod_page() const;
 
 	std::unordered_set<int> id_list() const;
 

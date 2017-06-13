@@ -1,6 +1,7 @@
 master(0.1.3):
     Feature:
         - bool operator == (info lhs, info rhs);
+        - avhttp::url mod_page() const;
 0.1.2:
     Feature:
         - factorio::mod::info read_name_fast(std::string name)
