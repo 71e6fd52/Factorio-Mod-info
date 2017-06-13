@@ -66,7 +66,6 @@ DA_MAIN_CATCH_EXCEPTION
 | 函数 | 简介 |
 | ---- | ---- |
 | info() | 默认构造函数 |
-| info(std::string name) | 构造时载入 Mod 信息，name 为 Mod 名 |
 | info read_name(std::string name) | 以 Mod 名读取信息（如：rso-mod） |
 | info read_name_fast(std::string name) | 以 Mod 名读取部分信息（没有发布相关的信息），速度更快 |
 | info read_full_name(std::string name) | 以 Mod 完整名（"作者名/Mod 名"）读取（如：orzelek/rso-mod） |
