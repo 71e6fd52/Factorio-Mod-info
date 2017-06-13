@@ -1,11 +1,6 @@
 set_xmakever("2.1.3")
 set_languages("gnu++14")
 
-option("yaml-cpp")
-	set_default(false)
-	set_showmenu(true)
-	add_defines_if_ok("ENABLE_YAML_CPP")
-
 target("factorio-mod-info")
 	set_kind("shared")
 	add_files("src/*.cpp") 
@@ -15,7 +10,6 @@ target("factorio-mod-info")
 	set_strip("all")
 	set_warnings("none")
 	add_defines("NDEBUG")
-	add_options("yaml-cpp")
 	before_build(function (target)
 		if not os.exists("/usr/include/boost") then
 			if io.stderr == nil then
@@ -49,7 +43,6 @@ target("factorio-mod-info-dbg")
 	set_optimize("none")
 	set_warnings("all")
 	add_defines("DEBUG")
-	add_options("yaml-cpp")
 	before_build(function (target)
 		if not os.exists("/usr/include/boost") then
 			if io.stderr == nil then

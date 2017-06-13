@@ -99,7 +99,6 @@ DA_MAIN_CATCH_EXCEPTION
 | 函数 |
 | ---- |
 | bool operator == (info lhs, info rhs) |
-| YAML::Emitter& operator << (YAML::Emitter& out, const factorio::mod::info & mod) |
 
 ### 宏选项
 | 宏 | 简介 |

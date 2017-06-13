@@ -2,10 +2,6 @@
 #include <unordered_set>
 #include <avhttp/url.hpp>
 #include <DA/exception.hpp>
-namespace YAML
-{
-	class Emitter;
-} /* YAML */ 
 namespace factorio
 {
 namespace mod
@@ -55,7 +51,6 @@ public:
 #undef aaa
 
 };
-YAML::Emitter& operator << (YAML::Emitter& out, const info & mod);
 bool operator == (info lhs, info rhs);
 } /* mod */ 
 } /* factorio */ 
