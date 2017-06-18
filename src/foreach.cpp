@@ -5,6 +5,7 @@
 #include <DA/exception.hpp>
 #include <regex>
 #include <unordered_set>
+#include <map>
 #include <avhttp/logging.hpp>
 #ifdef DEBUG
 	#include <iostream>
@@ -24,6 +25,7 @@ namespace mod
 		auto releases = pt.get_child("releases");
 		std::regex reg(R"((2\d{3}(-\d{2}){2})T((\d{2}:){2}\d{2}.\d+)Z)");
 		auto last_time = time_from_string(updated_at());
+		std::map<decltype(last_time - last_time), int> d;
 		for (const auto & i : releases)
 		{
 			auto this_time = time_from_string(
@@ -32,21 +34,9 @@ namespace mod
 			auto dd = last_time - this_time;
 			if(dd.is_negative())
 				dd = dd.invert_sign();
-			if(dd < minutes(1))
-				return i.second;
+			d.insert({dd, i.second.get<int>("id")});
 		}
-		for (const auto & i : releases)
-		{
-			auto this_time = time_from_string(
-					std::regex_replace(i.second.get<std::string>("released_at"),
-						reg, R"($1 $3)"));
-			auto dd = last_time - this_time;
-			if(dd.is_negative())
-				dd = dd.invert_sign();
-			if(dd < hours(1))
-				return i.second;
-		}
-		DA_THROW_EXCEPTION_1("can't found releases");
+		return get_releases(d.begin()->second);
 	}
 	boost::property_tree::ptree info::get_releases(int id) const
 	{
