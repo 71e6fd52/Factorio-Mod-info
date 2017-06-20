@@ -11,24 +11,8 @@ target("factorio-mod-info")
 	set_warnings("none")
 	add_defines("NDEBUG")
 	before_build(function (target)
-		if not os.exists("/usr/include/boost") then
-			if io.stderr == nil then
-				io.stderr = io.open("/dev/stderr", "a")
-			end
-			io.stderr:print("Need boost");
-			io.stderr:print("Install it with package manager")
-			io.stderr:print("Or http://www.boost.org/")
-			os.exit(1);
-		end
-		if not (os.exists("/usr/include/avhttp") and os.exists("/usr/include/avhttp.hpp")) then
-			if io.stderr == nil then
-				io.stderr = io.open("/dev/stderr", "a")
-			end
-			io.stderr:print("Need avhttp");
-			io.stderr:print("Install it with package manager")
-			io.stderr:print("Or https://avplayer.org/avhttp.html")
-			os.exit(1);
-		end
+		assert(os.isdir("/usr/include/boost"), "Need boost\nInstall it with package manager\nOr visit http://www.boost.org/")
+		assert(os.isdir("/usr/include/boost") and os.exists("/usr/include/avhttp.hpp"), "Need avhttp\nOr visit https://avplayer.org/avhttp.html")
 		if not os.exists("/usr/include/DA/exception.hpp") then
 			os.exec("sh -c \'cd $(scriptdir)/DA-exception && sudo ./install\'")
 		end
@@ -44,24 +28,8 @@ target("factorio-mod-info-dbg")
 	set_warnings("all")
 	add_defines("DEBUG")
 	before_build(function (target)
-		if not os.exists("/usr/include/boost") then
-			if io.stderr == nil then
-				io.stderr = io.open("/dev/stderr", "a")
-			end
-			io.stderr:print("Need boost");
-			io.stderr:print("Install it with package manager")
-			io.stderr:print("Or http://www.boost.org/")
-			os.exit(1);
-		end
-		if not (os.exists("/usr/include/avhttp") and os.exists("/usr/include/avhttp.hpp")) then
-			if io.stderr == nil then
-				io.stderr = io.open("/dev/stderr", "a")
-			end
-			io.stderr:print("Need avhttp");
-			io.stderr:print("Install it with package manager")
-			io.stderr:print("Or https://avplayer.org/avhttp.html")
-			os.exit(1);
-		end
+		assert(os.isdir("/usr/include/boost"), "Need boost\nInstall it with package manager\nOr visit http://www.boost.org/")
+		assert(os.isdir("/usr/include/boost") and os.exists("/usr/include/avhttp.hpp"), "Need avhttp\nOr visit https://avplayer.org/avhttp.html")
 		if not os.exists("/usr/include/DA/exception.hpp") then
 			os.exec("sh -c \'cd $(scriptdir)/DA-exception && sudo ./install\'")
 		end
