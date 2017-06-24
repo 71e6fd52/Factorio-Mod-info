@@ -26,27 +26,13 @@ xmake install
 int main()
 try
 {
-	factorio::mod::info a("pushbutton");
-	std::cout << a.download_url() << std::endl;
-}
-DA_MAIN_CATCH_EXCEPTION
-```
-或者分离开来
-```c++
-#define AVHTTP_DISABLE_THREAD
-#include <mod-info.hpp>
-#include <iostream>
-
-int main()
-try
-{
 	factorio::mod::info a;
 	a.read_name("pushbutton");
 	std::cout << a.download_url() << std::endl;
 }
 DA_MAIN_CATCH_EXCEPTION
 ```
-还可以指定 Factorio 版本：
+可以指定 Factorio 版本：
 ```c++
 #define AVHTTP_DISABLE_THREAD
 #include <mod-info.hpp>
@@ -69,13 +55,14 @@ DA_MAIN_CATCH_EXCEPTION
 | info read_name(std::string name) | 以 Mod 名读取信息（如：rso-mod） |
 | info read_name_fast(std::string name) | 以 Mod 名读取部分信息（没有发布相关的信息），速度更快 |
 | info read_full_name(std::string name) | 以 Mod 完整名（"作者名/Mod 名"）读取（如：orzelek/rso-mod） |
-| info read_url(std::string url) | 从 URL 读取 Mod 信息（不一定为 mods.factorio.com，只要 json 数据与 window.\_\_INITIAL\_STATE\_\_ 在同一行） |
+| info read_url(avhttp::url url) | 从 URL 读取 Mod 信息（不一定为 mods.factorio.com，只要 json 数据与 window.\_\_INITIAL\_STATE\_\_ 在同一行） |
 #### 读取信息
 | 函数 | 读取内容 |
 | ---- | -------- |
 | int id() | id（如 rso-mod 为 87644） |
 | std::string name() | Mod 名（如 Resource Spawner Overhaul 为 rso-mod ） |
 | std::string title() | 标题（如 rso-mod 为 Resource Spawner Overhaul ） |
+| avhttp::url mod_page() | Mod 页面 |
 | std::string homepage() | 主页 |
 | std::string github_path() | 源码 |
 | std::string summary() | 简介 |
