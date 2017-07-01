@@ -23,6 +23,7 @@ public:
 	info(std::string name);
 	info read_name(std::string name);
 	info read_name_fast(std::string name);
+	info search(std::string name);
 	info read_full_name(std::string name);
 	info read_url(avhttp::url url);
 

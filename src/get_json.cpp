@@ -67,6 +67,33 @@ namespace mod
 		DA_THROW_EXCEPTION_1("Can't found mod");
 	}
 	DA_CATCH_EXCEPTION
+	ptree search_blurry(std::string name)
+	try
+	{
+		using namespace std;
+		stringstream ss;
+		{
+			std::string url = "https://mods.factorio.com/?q=";
+			url += escape_string(name);
+	
+			boost::asio::io_service io;
+			avhttp::http_stream h(io);
+			h.open(url);
+	
+			ss << &h;
+		}
+	
+		stringstream json(get_script(ss.str()));
+		#ifdef DEBUG
+			AVHTTP_LOG_DBG << "search json:\n" << json.str();
+		#endif
+		ptree pt;
+		read_json(json, pt);
+	
+		auto child = pt.get_child("mods.modsPages");
+		return child.begin()->second.begin()->second;
+	}
+	DA_CATCH_EXCEPTION
 	
 	ptree info::get_json(avhttp::url url) const
 	try
@@ -108,7 +135,14 @@ namespace mod
 	info info::read_name_fast(std::string name)
 	try
 	{
-		pt = search(name);
+		pt = mod::search(name);
+		return *this;
+	}
+	DA_CATCH_EXCEPTION
+	info info::search(std::string name)
+	try
+	{
+		pt = search_blurry(name);
 		return *this;
 	}
 	DA_CATCH_EXCEPTION
