@@ -1,41 +1,44 @@
 master(0.1.3):
-    Deprecated:
-        - info(std::string name)
-    Feature:
-        - info search(std::string name);
-        - bool operator == (info lhs, info rhs);
-        - avhttp::url mod_page() const;
+  Change:
+    - code style
+    - clang-tidy pass
+  Deprecated:
+    - info(std::string name)
+  Feature:
+    - info search(std::string name);
+    - bool operator == (info lhs, info rhs);
+    - avhttp::url mod_page() const;
 0.1.2:
-    Feature:
-        - factorio::mod::info read_name_fast(std::string name)
-        - info(info)
-    Change:
-        - function const
-        - get_script no longer use xml
-        - read-* return factorio::mod::info
-    Fix:
-        - undefined reference by set_symbols
-        - dynamic exception specifications
-        - some try catch
-        - mod name can't have space
+  Feature:
+    - factorio::mod::info read_name_fast(std::string name)
+    - info(info)
+  Change:
+    - function const
+    - get_script no longer use xml
+    - read-* return factorio::mod::info
+ Fix:
+    - undefined reference by set_symbols
+    - dynamic exception specifications
+    - some try catch
+    - mod name can't have space
 0.1.1:
-    Feature:
-        - info() 
-        - info(std::string name) 
-        - void read_name(std::string name) 
-        - void read_full_name(std::string name) 
-        - void read_url(std::string url) 
-        - int id() 
-        - std::string name() 
-        - std::string title() 
-        - std::string homepage() 
-        - std::string github_path() 
-        - std::string summary() 
-        - std::string description() 
-        - std::string owner() 
-        - std::string license_name() 
-        - std::string license_url() 
-        - std::unordered_set<int> id_list() 
-        - download_url 
-        - version 
-        - factorio_version 
+  Feature:
+    - info() 
+    - info(std::string name) 
+    - void read_name(std::string name) 
+    - void read_full_name(std::string name) 
+    - void read_url(std::string url) 
+    - int id() 
+    - std::string name() 
+    - std::string title() 
+    - std::string homepage() 
+    - std::string github_path() 
+    - std::string summary() 
+    - std::string description() 
+    - std::string owner() 
+    - std::string license_name() 
+    - std::string license_url() 
+    - std::unordered_set<int> id_list() 
+    - download_url 
+    - version 
+    - factorio_version 

@@ -3,9 +3,9 @@ namespace factorio
 {
 namespace mod
 {
-	bool operator == (info lhs, info rhs)
+	bool operator == (const info& lhs, const info& rhs)
 	{
-		return lhs.name() == rhs.name();
+		return lhs.id() == rhs.id();
 	}
-} /* mod */ 
-} /* factorio */ 
+} // namespace mod
+} // namespace factorio
