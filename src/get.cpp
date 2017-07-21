@@ -44,7 +44,7 @@ int info::id() const
   DA_CATCH_EXCEPTION
   aaa(,);
   aaa(int, id);
-  aaa(const std::string &, factorio_version);
+  aaa(const std::string&, factorio_version);
 #undef aaa
 
 #define bbb(name, x, y)\
@@ -57,7 +57,7 @@ int info::id() const
 #define aaa(x)\
   bbb(x,,)\
   bbb(x, int, id)\
-  bbb(x, const std::string &, factorio_version)\
+  bbb(x, const std::string&, factorio_version)\
 
   aaa(version);
   aaa(factorio_version);
