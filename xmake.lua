@@ -1,5 +1,5 @@
 set_xmakever("2.1.3")
-set_languages("gnu++14")
+set_languages("gnuxx14")
 
 target("factorio-mod-info")
   set_kind("shared")
