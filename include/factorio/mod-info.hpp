@@ -1,6 +1,7 @@
 #ifndef FACTORIO_MOD_INFO_H
 #define FACTORIO_MOD_INFO_H
 
+#define AVHTTP_ENABLE_OPENSSL
 #include <avhttp/url.hpp>
 #include <boost/property_tree/ptree.hpp>
 #include <unordered_set>
