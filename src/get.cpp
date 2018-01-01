@@ -6,7 +6,7 @@
 #include <unordered_set>
 
 #ifdef DEBUG
-	#include <iostream>
+    #include <iostream>
 #endif
 
 namespace factorio
