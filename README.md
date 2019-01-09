@@ -6,11 +6,11 @@
 
 **自从 Factorio Mod 网站更新后，此库无法再被使用，也不再更新**
 
-**after Factorio Mod website update，this library can't be used anymore，and won't update**
+**After Factorio Mod website update, this library can't be used anymore, and won't update**
 
 如果你使用 ruby 请使用 https://gitlab.com/71e6fd52/factorio-mod
 
-use https://gitlab.com/71e6fd52/factorio-mod if you can use ruby 
+Use https://gitlab.com/71e6fd52/factorio-mod if you can use ruby 
 ## 安装
 ### Arch Linux
 在 Arch Linux 的 aur 中有 [Factorio-Mod-info-git](https://aur.archlinux.org/packages/Factorio-Mod-info-git/)
