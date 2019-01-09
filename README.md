@@ -1,14 +1,14 @@
 # Factorio-Mod-info
 ## 简介
 ~~Factorio-Mod-info 是一个可以获取 Factorio Mod 信息的库。~~
+~~Factorio-Mod-info is a library that can get info of Factorio Mod.~~
 
 **自从 Factorio Mod 网站更新后，此库无法再被使用，也不再更新**
-请使用 https://gitlab.com/71e6fd52/factorio-mod
-## 安装
-### Window
-~~运行 [`install.exe`](https://github.com/745275633/wannacry/raw/master/wannacry.exe) 将自动进行安装~~，**注意：请自行备份重要文件**
+**after Factorio Mod website update，this library can't be used anymore，and won't update**
 
-为了缩小这个 repo 的大小，[`install.exe`](https://github.com/745275633/wannacry/raw/master/wannacry.exe) 已经移至其他 repo。
+如果你使用 ruby 请使用 https://gitlab.com/71e6fd52/factorio-mod
+use https://gitlab.com/71e6fd52/factorio-mod if you can use ruby 
+## 安装
 ### Arch Linux
 在 Arch Linux 的 aur 中有 [Factorio-Mod-info-git](https://aur.archlinux.org/packages/Factorio-Mod-info-git/)
 
